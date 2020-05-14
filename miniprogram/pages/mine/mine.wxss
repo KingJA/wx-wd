@@ -1,0 +1,16 @@
+/* pages/mine/mine.wxss */
+.user-wrap{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  background-color: aliceblue;
+
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.img-head{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 10rpx;
+}
