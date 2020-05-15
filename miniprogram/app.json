@@ -1,13 +1,11 @@
 {
   "pages": [
+   
     "pages/login/login",
-    "pages/mine/mine",
-    "pages/detail/detail",
     "pages/user/user",
+    "pages/detail/detail",
     "pages/register/register",
     "pages/index/index"
-    
-   
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -29,7 +27,7 @@
         "selectedIconPath": "images/tab/yuedu_hl.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/tab/ciwei.png",
         "selectedIconPath": "images/tab/ciwei_hl.png"

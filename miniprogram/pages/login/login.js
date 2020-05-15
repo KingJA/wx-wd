@@ -23,7 +23,7 @@ Page({
         if (res.data.code == 0) {
           app.globalData.UserInfo = res.data.data;
 
-          wx.navigateTo({
+          wx.redirectTo({
             url: '../user/user'
           });
    

@@ -17,6 +17,7 @@ App({
 
     this.globalData = {
       BaseApiUrl: "http://localhost:8080",
+      BaseResUrl: "http://localhost:8080/upload",
       UserInfo:{}
     }
   }
