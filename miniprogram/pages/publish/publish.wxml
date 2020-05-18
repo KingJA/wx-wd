@@ -1,0 +1,16 @@
+<!--pages/publish/publish.wxml-->
+
+
+<view>
+	<form bindsubmit='onPublish'>
+		<view class="item-wrap">
+			<input name="title" class="publish-input" maxlength="28" placeholder="请输入标题" />
+		</view>
+		<view class="item-wrap">
+			<input name="content" class="publish-input" placeholder="请输入详细内容" />
+		</view>
+
+		<button type="primary" class="btn_publish" form-type='submit'>发布</button>
+
+	</form>
+</view>

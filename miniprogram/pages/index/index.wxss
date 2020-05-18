@@ -1,1 +1,28 @@
 /* pages/index/index.wxss */
+.publish-wrap {
+
+  position: fixed;
+  bottom: 40rpx;
+  right: 40rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 100%;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.publish-wrap image {
+
+  width: 50rpx;
+  height: 50rpx;
+
+}
+
+.publish-wrap text {
+  color: #fff;
+  font-size: 24rpx;
+
+}

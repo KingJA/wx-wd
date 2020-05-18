@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/publish/publish.js
 Page({
 
   /**
@@ -64,9 +64,8 @@ Page({
 
   },
   onPublish: function (e) {
-
-    wx.navigateTo({
-      url: '../publish/publish',
-    })
+    console.log("onPublish");
+    var form = e.detail.value;
+    console.log(form);
   }
 })

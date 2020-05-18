@@ -12,5 +12,38 @@
 .img-head{
   width: 100rpx;
   height: 100rpx;
+  border-radius: 10rpx;
   margin-bottom: 10rpx;
+}
+
+
+.tab-wrap{
+  margin-top: 30rpx;
+  background-color: #ffffff;
+}
+
+
+.tab-item{
+  padding: 20rpx 40rpx 20rpx 40rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  border-bottom: 1rpx solid #eee;
+}
+
+
+.tab-item-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 26rpx;
+}
+
+.tab-item-arrow{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.btn_quit{
+  margin-top: 50rpx;
 }

@@ -1,7 +1,44 @@
 <!--pages/mine/mine.wxml-->
 <view class="user-wrap">
 
-<image src="{{userInfo.faceUrl}}" class="img-head" bindtap="changeFace"></image>
-<text>{{userInfo.username}}</text>
+	<image src="{{userInfo.avatarUrl}}" class="img-head" bindtap="changeFace"></image>
+	<text>{{userInfo.nickName}}</text>
+
 
 </view>
+
+
+
+<view class="tab-wrap">
+
+
+	<view class="tab-item">
+		<view>
+			<image src="/images/icon/ic_tab_default.png" class="tab-item-icon" bindtap="changeFace" />
+			<text class="tab-item-text">我发起的问题</text>
+		</view>
+		<image src="/images/icon/ic_arrow_right.png" class="tab-item-arrow" bindtap="changeFace" />
+	</view>
+
+<view class="tab-item">
+		<view>
+			<image src="/images/icon/ic_tab_default.png" class="tab-item-icon" bindtap="changeFace" />
+			<text class="tab-item-text">我回答的问题</text>
+		</view>
+		<image src="/images/icon/ic_arrow_right.png" class="tab-item-arrow" bindtap="changeFace" />
+	</view>
+
+  <view class="tab-item">
+		<view>
+			<image src="/images/icon/ic_tab_default.png" class="tab-item-icon" bindtap="changeFace" />
+			<text class="tab-item-text">我收藏的问题</text>
+		</view>
+		<image src="/images/icon/ic_arrow_right.png" class="tab-item-arrow" bindtap="changeFace" />
+	</view>
+
+
+	
+</view>
+
+<button class="mini-btn" type="primary" size="mini" class="btn_quit">发起问题</button>
+<button class="mini-btn" type="primary" size="mini" class="btn_quit">退出登录</button>
