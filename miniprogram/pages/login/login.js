@@ -2,40 +2,23 @@
 var app = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
   onLogin: function (e) {
-    wx.request({
-      url: app.globalData.BaseApiUrl + '/user/login',
-      method: 'post',
-      data: {
-        username: e.detail.value.username,
-        password: e.detail.value.password
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: (res) => {
-        if (res.data.code == 0) {
-          app.globalData.UserInfo = res.data.data;
-
-          wx.redirectTo({
-            url: '../user/user'
-          });
-   
-          console.log(app.globalData.UserInfo);
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
-      }
-    })
+    var data = {
+      username: e.detail.value.username,
+      password: e.detail.value.password
+    }
+    app.api.login(data).then((data) => {
+      console.log(data);
+     
+      app.setUserInfo(data);
+      wx.navigateBack({
+        delta: 1 //返回上1级
+      });
+    });
+  
 
   },
   goRegister: function (e) {

@@ -47,3 +47,10 @@
 .btn_quit{
   margin-top: 50rpx;
 }
+
+.re_lo{
+  margin-top: 10rpx;
+  background-color:#eee;
+  padding: 4rpx 18rpx 4rpx 18rpx;
+  border-radius: 8rpx;
+}

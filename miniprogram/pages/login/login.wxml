@@ -1,13 +1,13 @@
 <!--pages/register/register.wxml-->
 <view>
-	<form bindsubmit="onLogin">
-
-		<input placeholder="请输入账号" name="username"/>
-		<input placeholder="请输入密码" name="password"/>
-
-    <button type="primary" form-type="submit">登录</button>
-    <button type="primary" bindtap="goRegister">注册</button>
-
+	<form bindsubmit='onLogin'>
+		<view class="item-wrap">
+			<input name="title" class="publish-input" placeholder="请输入账号" name="username" />
+		</view>
+		<view class="item-wrap">
+			<input name="content" class="publish-input" placeholder="请输入密码" name="password" />
+		</view>
+		<button type="primary" form-type="submit" class="btn_publish">登录</button>
+		<button type="primary" bindtap="goRegister" class="btn_publish">注册</button>
 	</form>
-
 </view>

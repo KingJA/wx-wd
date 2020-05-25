@@ -1,1 +1,10 @@
 /* pages/login/login.wxss */
+.item-wrap{
+  padding: 20rpx 40rpx 20rpx 40rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.btn_publish{
+  margin-top: 40rpx;
+}

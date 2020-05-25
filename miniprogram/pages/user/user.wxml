@@ -1,8 +1,9 @@
 <!--pages/mine/mine.wxml-->
 <view class="user-wrap">
 
-	<image src="{{userInfo.avatarUrl}}" class="img-head" bindtap="changeFace"></image>
-	<text>{{userInfo.nickName}}</text>
+	<image src="{{userInfo.faceUrl}}" class="img-head" bindtap="changeFace"></image>
+	<text>{{userInfo.username}}</text>
+	<text class="re_lo" bindtap="loginOrQuit">{{hasUserInfo?'退出登录':'注册/登录'}}</text>
 
 
 </view>
@@ -39,6 +40,3 @@
 
 	
 </view>
-
-<button class="mini-btn" type="primary" size="mini" class="btn_quit">发起问题</button>
-<button class="mini-btn" type="primary" size="mini" class="btn_quit">退出登录</button>
