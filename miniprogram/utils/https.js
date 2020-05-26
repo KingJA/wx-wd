@@ -1,11 +1,10 @@
 import base from './base.js';
-//封装GET请求
-function get({
-  url,
-  data
-}) {
-  //为了用户体验，加一个loading效果
 
+//封装GET请求
+function get(url,data) {
+  //为了用户体验，加一个loading效果
+  console.log('get 请求参数:>>>>>');
+  console.log(data);
   wx.showLoading({
     title: '加载中',
     mask: true
@@ -15,12 +14,13 @@ function get({
       url: base.baseUrl + url,
       data,
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/json',
+        'token':  getToken()
       },
       method: 'GET',
       success: (res) => {
         if (res.data.code === 0) {
-          resolved(res.data)
+          resolved(res.data.data)
         } else {
           wx.showToast({
             title: res.data.msg,
@@ -40,16 +40,20 @@ function get({
 
 //封装POST请求
 function post(url, data) {
+  console.log('post 请求参数:>>>>>');
+  console.log(data);
   wx.showLoading({
     title: '加载中',
     mask: true
   });
+  var token = getToken();
   return new Promise((resolved, rejected) => {
     const obj = {
       url: base.baseUrl + url,
       data,
       header: {
-        'content-type': 'application/x-www-form-urlencoded'
+        'content-type': 'application/x-www-form-urlencoded',
+        'token': token
       },
       method: 'POST',
       success: (res) => {
@@ -83,6 +87,14 @@ function showToast(title) {
   });
 }
 
+function getToken() {
+  var app = getApp();
+  var userInfo = app.globalData.userInfo;
+  var result = userInfo ? userInfo.token : "";
+  console.log('result');
+  console.log(result);
+  return result;
+}
 
 
 

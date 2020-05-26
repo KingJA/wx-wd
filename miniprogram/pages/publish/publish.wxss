@@ -12,3 +12,6 @@
 .btn_publish{
   margin-top: 40rpx;
 }
+.uploader-wrap{
+   padding: 20rpx 40rpx 20rpx 40rpx;
+}

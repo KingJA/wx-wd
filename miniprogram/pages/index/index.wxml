@@ -1,8 +1,32 @@
 <!--pages/index/index.wxml-->
-<text>首页</text>
+<view>
+
+
+
+
+	<block wx:for="{{questionList}}" wx:for-item="question" wx:key="index">
+		<view class="question-item">
+			<view class="question-text">
+				<text class="question-title">{{question.title}}</text>
+				<text class="question-content">{{question.content}}</text>
+			</view>
+			<image class="question-img" src="/images/question/q_1.jpg" />
+		</view>
+
+	</block>
+
+</view>
+
+
+
+
+
+
+
+
 
 
 <view class="publish-wrap" bindtap="onPublish">
 	<!-- <image src="/images/icon/ic_publish.png" ></image> -->
-  <text>提问</text>
+	<text>提问</text>
 </view>
