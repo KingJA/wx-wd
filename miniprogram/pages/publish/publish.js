@@ -45,7 +45,6 @@ Page({
 
   afterRead(event) {
     console.log('afterRead');
-    console.log(event.detail);
     const {
       file,
       name
@@ -55,7 +54,8 @@ Page({
     this.setData({
       [`fileList${name}`]: fileList.concat(file)
     });
-    console.log(this.data.fileList);
+    console.log(event.detail.file.path);
+    console.log(this.data.fileList[0].path);
   },
 
   onPublish: function (e) {
@@ -65,9 +65,16 @@ Page({
       title: form.title,
       content: form.content
     }
-    app.api.publish(data).then((data) => {
-      console.log(data);
+    if(this.data.fileList[0]){
+      app.api.publishQuestion(this.data.fileList[0].path,data).then((data) => {
+        console.log(data);
+      });
+    }else{
+      app.api.publish(data).then((data) => {
+        console.log(data);
+      });
+    }
 
-    });
+   
   }
 })

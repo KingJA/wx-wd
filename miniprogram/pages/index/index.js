@@ -8,7 +8,7 @@ Page({
   data: {
     pageIndex: 0,
     pageSize: 10,
-    questionList:[]
+    questionList: []
   },
 
   /**
@@ -16,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     // this.data.totalCount += subjects.length;
-    this.getQuestions(this.data.pageIndex,this.data.pageSize);
+    this.getQuestions(this.data.pageIndex, this.data.pageSize);
 
 
   },
@@ -28,6 +28,9 @@ Page({
     }
     app.api.getQuestions(data).then((data) => {
       console.log(data);
+      if (pageIndex == 0) {
+        wx.stopPullDownRefresh();
+      }
       var newQuestionList = this.data.questionList.concat(data);
       this.setData({
         questionList: newQuestionList
@@ -42,14 +45,20 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('onPullDownRefresh');
+    console.log('下拉刷新');
+    this.data.pageIndex = 0;
+    this.data.questionList=[];
+    this.getQuestions(this.data.pageIndex, this.data.pageSize);
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('上拉触底事件');
+    console.log('上拉加载');
+    this.data.pageIndex ++;
+    this.getQuestions(this.data.pageIndex, this.data.pageSize);
   },
 
   /**

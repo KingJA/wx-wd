@@ -40,12 +40,12 @@
 .question-text{
   height: 90rpx;
   overflow: hidden;
-  margin-right: 20rpx;
+ 
  
 
 }
 .question-img{
-
+  margin-left: 20rpx;
   width: 160rpx;
   height: 120rpx;
   flex: 0 0 auto;

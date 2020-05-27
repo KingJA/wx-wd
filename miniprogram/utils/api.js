@@ -10,6 +10,12 @@ const api = {
   },
   getQuestions: (param) => {
     return http.get('/question/questions', param)
+  },
+  changeFace: (imgUrl) => {
+    return http.uploadFile('/user/changeFace', imgUrl)
+  },
+  publishQuestion: (imgUrl,param) => {
+    return http.uploadFile('/question/publish', imgUrl,param)
   }
 }
 export default api;

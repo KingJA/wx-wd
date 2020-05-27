@@ -1,7 +1,7 @@
 import base from './base.js';
 
 //封装GET请求
-function get(url,data) {
+function get(url, data) {
   //为了用户体验，加一个loading效果
   console.log('get 请求参数:>>>>>');
   console.log(data);
@@ -15,7 +15,7 @@ function get(url,data) {
       data,
       header: {
         'content-type': 'application/json',
-        'token':  getToken()
+        'token': getToken()
       },
       method: 'GET',
       success: (res) => {
@@ -80,6 +80,49 @@ function post(url, data) {
 
 }
 
+//封装上传文件
+function uploadFile(url, imgUrl, data = {}) {
+  console.log('上传文件 请求参数:>>>>>');
+  console.log(data);
+  wx.showLoading({
+    title: '"上传中"',
+  });
+
+  return new Promise((resolved, rejected) => {
+    const obj = {
+      filePath: imgUrl,
+      name: 'file',
+      url: base.baseUrl + url,
+      formData: data,
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'token': getToken()
+      },
+      success: (res) => {
+        const data = JSON.parse(res.data);
+        if (data.code === 0) {
+          resolved(data.data)
+        } else {
+          showToast(data.msg);
+          rejected(data);
+        }
+        console.log("success");
+      },
+      fail: (err) => {
+        showToast("文件上传异常");
+        rejected(err)
+        console.log("fail");
+      },
+      complete: () => {
+        wx.hideLoading();
+        console.log("complete");
+      }
+    }
+    wx.uploadFile(obj)
+  })
+
+}
+
 function showToast(title) {
   wx.showToast({
     title: title,
@@ -91,8 +134,6 @@ function getToken() {
   var app = getApp();
   var userInfo = app.globalData.userInfo;
   var result = userInfo ? userInfo.token : "";
-  console.log('result');
-  console.log(result);
   return result;
 }
 
@@ -101,5 +142,6 @@ function getToken() {
 //导出封装的_post方法
 export default {
   post,
-  get
+  get,
+  uploadFile
 }

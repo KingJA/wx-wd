@@ -15,9 +15,9 @@ Page({
   },
 
   loginOrQuit: function (e) {
-    if(this.data.hasUserInfo){
+    if (this.data.hasUserInfo) {
       wx.removeStorageSync('userInfo');
-      app.globalData.userInfo=null;
+      app.globalData.userInfo = null;
       this.setData({
         userInfo: {
           username: '游客',
@@ -25,7 +25,7 @@ Page({
         },
         hasUserInfo: false
       });
-    }else{
+    } else {
       wx.navigateTo({
         url: '../login/login',
       })
@@ -58,38 +58,24 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         console.log(tempFilePaths);
-        wx.uploadFile({
-          url: app.globalData.BaseApiUrl + '/user/changeFace?userId=' + app.globalData.UserInfo.userId,
-          filePath: tempFilePaths[0],
-          name: 'file',
-          success: (res) => {
-            const url = JSON.parse(res.data).data;
-            console.log(url);
-            this.setData({
-              userInfo: {
-                username: app.globalData.userInfo.username,
-                faceUrl: app.globalData.BaseResUrl + url
-              }
-            })
 
-          }
-        })
+        app.api.changeFace(tempFilePaths[0]).then((data) => {
+          console.log(data);
+          this.setData({
+            userInfo: {
+              username: app.globalData.userInfo.username,
+              faceUrl: data
+            }
+          })
+
+        });
+
       }
     })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-    console.log('user onShow');
     this.refreshLoginStatus();
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    console.log('onHide');
-  },
 })
