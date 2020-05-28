@@ -47,7 +47,7 @@ Page({
   onPullDownRefresh: function () {
     console.log('下拉刷新');
     this.data.pageIndex = 0;
-    this.data.questionList=[];
+    this.data.questionList = [];
     this.getQuestions(this.data.pageIndex, this.data.pageSize);
 
   },
@@ -57,7 +57,7 @@ Page({
    */
   onReachBottom: function () {
     console.log('上拉加载');
-    this.data.pageIndex ++;
+    this.data.pageIndex++;
     this.getQuestions(this.data.pageIndex, this.data.pageSize);
   },
 
@@ -71,6 +71,12 @@ Page({
 
     wx.navigateTo({
       url: '../publish/publish',
+    })
+  },
+  onQuestionDetail: function (event) {
+    var questionId = event.currentTarget.dataset.questionId;
+    wx.navigateTo({
+      url: "../detail/detail?id=" + questionId
     })
   }
 })

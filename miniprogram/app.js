@@ -74,7 +74,7 @@ App({
     
     this.globalData.userInfo = {
       username: userInfo.username,
-      faceUrl: this.getwholeUrl(userInfo.faceUrl),
+      faceUrl: userInfo.faceUrl,
       token: userInfo.token
     };
     wx.setStorageSync("userInfo", this.globalData.userInfo);

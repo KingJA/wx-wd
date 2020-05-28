@@ -16,6 +16,9 @@ const api = {
   },
   publishQuestion: (imgUrl,param) => {
     return http.uploadFile('/question/publish', imgUrl,param)
+  },
+  getQuestionDetail: (param) => {
+    return http.get('/question/detail', param)
   }
 }
 export default api;

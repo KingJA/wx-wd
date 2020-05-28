@@ -1,1 +1,39 @@
 /* pages/detail/detail.wxss */
+.question-content{
+  display: flex;
+  flex-direction: column;
+  padding: 16rpx;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user-face{
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 100%;
+}
+.user-name{
+  color: #999;
+  font-size: 28rpx;
+  margin-left: 16rpx;
+}
+.q_title{
+  margin-top: 16rpx;
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 600;
+
+}
+.q_content{
+  color: #666;
+  font-size: 28rpx;
+  margin-top: 16rpx;
+
+}
+.q_img{
+  margin-top: 16rpx;
+  width: 100%;
+}

@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+var app=getApp();
 Page({
 
   /**
@@ -12,6 +13,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var questionId = options.id;
+    console.log("questionId:"+questionId);
+    this.getQuestionDetail('29080d07aa9d45be956e6b337c06eee6');
+  },
+
+  getQuestionDetail: function (questionId) {
+    app.api.getQuestionDetail({
+      questionId
+    }).then((data) => {
+      console.log(data);
+    });
 
   },
 

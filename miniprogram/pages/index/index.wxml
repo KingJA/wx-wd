@@ -1,7 +1,7 @@
 <!--pages/index/index.wxml-->
 <view>
 	<block wx:for="{{questionList}}" wx:for-item="question" wx:key="index">
-		<view class="question-item">
+		<view class="question-item"  catchtap="onQuestionDetail" data-question-id="{{question.questionId}}">
 			<view class="question-text">
 				<text class="question-title">{{question.title}}</text>
 				<text class="question-content">{{question.content}}</text>

@@ -1,2 +1,18 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="question-container">
+
+	<view class="question-content">
+
+		<view class="user">
+			<image class="user-face" src="/images/avatar/6.jpg" />
+			<text class="user-name">雨后一度</text>
+
+		</view>
+
+		<text class="q_title">如何从法律角度解读法院裁决结果公布，孟晚舟未能获释？会对华为的芯片技术带来哪些影响？</text>
+		<text class="q_content">稍晚时候，华为公司发布声明表示，对不列颠哥伦比亚省高等法院的判决表示失望。“我们一直相信孟女士是清白的，我们也将继续支持孟女士寻求公正判决和自由。我们希望加拿大的司法体系最终能还孟女士清白。孟女士的律师团队将不懈努力，确保正义得到伸张。”</text>
+	<image class="q_img" src="/images/question/q_twz.jpg" />
+	</view>
+
+
+</view>
