@@ -1,39 +1,103 @@
 /* pages/detail/detail.wxss */
-.question-content{
+.question-content {
   display: flex;
   flex-direction: column;
   padding: 16rpx;
 }
 
-.user{
+.user {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.user-face{
+
+.user-face {
   width: 48rpx;
   height: 48rpx;
   border-radius: 100%;
 }
-.user-name{
+
+.user-name {
   color: #999;
   font-size: 28rpx;
   margin-left: 16rpx;
 }
-.q_title{
+
+.q_title {
   margin-top: 16rpx;
   color: #333;
   font-size: 32rpx;
   font-weight: 600;
 
 }
-.q_content{
+
+.q_content {
   color: #666;
   font-size: 28rpx;
   margin-top: 16rpx;
 
 }
-.q_img{
+
+.q_img {
   margin-top: 16rpx;
   width: 100%;
 }
+
+.bottom-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 1px solid #f3f3f3;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 80rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.oper-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.bar-input {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 28rpx;
+  height: 56rpx;
+  padding: 0 28rpx;
+  flex-grow: 1;
+}
+
+.bar-input image {
+  margin-right: 10rpx;
+}
+
+.bar-input input {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.input-placeholder {
+  font-size: 20rpx;
+  color: #cdcdcd;
+}
+.bar-oper{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.answer-div{
+  background-color: #f3f3f3;
+  padding: 8rpx 20rpx 8rpx 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+

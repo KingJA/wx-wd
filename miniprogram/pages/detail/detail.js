@@ -1,11 +1,15 @@
 // pages/detail/detail.js
-var app=getApp();
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    questionDetail: {},
+    collected:false,
+    questionId:'',
+    content:''
 
   },
 
@@ -14,7 +18,8 @@ Page({
    */
   onLoad: function (options) {
     var questionId = options.id;
-    console.log("questionId:"+questionId);
+    this.data.questionId=questionId;
+    console.log("questionId:" + questionId);
     this.getQuestionDetail('29080d07aa9d45be956e6b337c06eee6');
   },
 
@@ -23,13 +28,44 @@ Page({
       questionId
     }).then((data) => {
       console.log(data);
+      this.setData({
+        questionDetail: data,
+        collected:data.collected
+      });
     });
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
+  collect: function (e) {
+   var collected= e.currentTarget.dataset.collected;
+    console.log(collected);
+
+    app.api.collectQuestion({
+      questionId:this.data.questionId,collected
+    }).then((data) => {
+      console.log(data);
+      this.setData({
+        collected: data
+      });
+    });
+
+
+
+  },
+  saveContent: function (e) {
+    var content = e.detail.value;
+    console.log(content);
+    this.setData({
+      content
+    });
+
+  },
+  comment: function (e) {
+   
+    console.log(this.data.content);
+
+  },
   onReady: function () {
 
   },

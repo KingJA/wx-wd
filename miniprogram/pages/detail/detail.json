@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    
+    "van-uploader": "@vant/weapp/uploader/index",
+    "i-badge": "/static/iview-weapp/badge/index"
+  }
 }

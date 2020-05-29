@@ -19,6 +19,9 @@ const api = {
   },
   getQuestionDetail: (param) => {
     return http.get('/question/detail', param)
+  },
+  collectQuestion: (param) => {
+    return http.post('/question/collectQuestion', param)
   }
 }
 export default api;
