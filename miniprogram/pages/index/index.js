@@ -17,15 +17,12 @@ Page({
   onLoad: function (options) {
     // this.data.totalCount += subjects.length;
     this.getQuestions(this.data.pageIndex, this.data.pageSize);
-
-
   },
-
   getQuestions: function (pageIndex, pageSize) {
     var data = {
       pageIndex: pageIndex,
       pageSize: pageSize
-    }
+    };
     app.api.getQuestions(data).then((data) => {
       console.log(data);
       if (pageIndex == 0) {

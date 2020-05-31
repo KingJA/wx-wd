@@ -20,7 +20,9 @@ Page({
     var questionId = options.id;
     this.data.questionId=questionId;
     console.log("questionId:" + questionId);
-    this.getQuestionDetail('29080d07aa9d45be956e6b337c06eee6');
+    // this.getQuestionDetail('29080d07aa9d45be956e6b337c06eee6');
+    this.getQuestionDetail(questionId);
+
   },
 
   getQuestionDetail: function (questionId) {
@@ -62,8 +64,13 @@ Page({
 
   },
   comment: function (e) {
-   
     console.log(this.data.content);
+    app.api.comment({
+      content:this.data.content,questionId:this.data.questionId
+    }).then((data) => {
+      console.log(data);
+     
+    });
 
   },
   onReady: function () {

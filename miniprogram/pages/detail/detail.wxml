@@ -24,16 +24,15 @@
 
 			<view class="answer-div">回答 3</view>
 
-			<view class="question-content">
-
-				<view class="user">
-					<image class="user-face" src="{{questionDetail.faceUrl}}" />
-					<text class="user-name">{{questionDetail.username}}</text>
+			<block wx:for="{{questionDetail.comments}}" wx:for-item="item" wx:key="index">
+				<view class="question-content">
+					<view class="user">
+						<image class="user-face" src="{{item.faceUrl}}" />
+						<text class="user-name">{{item.username}}</text>
+					</view>
+					<text class="q_content">{{item.content}}</text>
 				</view>
-
-				<text class="q_content">{{questionDetail.content}}</text>
-
-			</view>
+			</block>
 
 
 		</view>
@@ -47,14 +46,14 @@
 		<!-- 输入框 -->
 		<view class="bar-input">
 			<image class="oper-icon" src="/images/icon/ic_input.png" />
-			<input placeholder="说点什么" placeholder-class="input-placeholder" bindinput="saveContent"/>
+			<input placeholder="说点什么" placeholder-class="input-placeholder" bindinput="saveContent" />
 
 		</view>
 
 
 		<!-- 操作组 -->
 		<view class="bar-oper">
-			<image class="oper-icon" src="/images/icon/ic_send.png" catchtap="comment"/>
+			<image class="oper-icon" src="/images/icon/ic_send.png" catchtap="comment" />
 			<i-badge count="3" i-class="badge-count">
 				<image class="oper-icon" src="/images/icon/ic_comment.png" />
 			</i-badge>

@@ -22,6 +22,10 @@ const api = {
   },
   collectQuestion: (param) => {
     return http.post('/question/collectQuestion', param)
+  },
+  comment: (param) => {
+    return http.post('/question/comment', param)
   }
+  
 }
 export default api;
