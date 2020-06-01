@@ -1,6 +1,6 @@
 
 const base={
-  baseUrl:'http://localhost:8080',
-  baseResUrl:'http://localhost:8080/upload'
+  baseUrl:'http://localhost',
+  baseResUrl:'http://localhost/upload'
 }
 export default base;
