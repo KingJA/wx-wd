@@ -1,0 +1,9 @@
+<import src="../question-item-template/question-item-template.wxml" />
+<template name="questionListTemplate">
+	<view>
+		<block wx:for="{{questionList}}" wx:for-item="question" wx:key="index">
+		<template is="questionItemTemplate" data="{{question}}" ></template>
+		</block>
+	</view>
+
+</template>

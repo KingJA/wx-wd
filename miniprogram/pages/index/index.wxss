@@ -1,4 +1,6 @@
 /* pages/index/index.wxss */
+
+@import "../../templates/question-list-template/question-list-template.wxss";
 .publish-wrap {
 
   position: fixed;
@@ -13,7 +15,6 @@
   align-items: center;
 }
 
-
 .publish-wrap image {
 
   width: 50rpx;
@@ -24,53 +25,5 @@
 .publish-wrap text {
   color: #fff;
   font-size: 24rpx;
-
-}
-
-.question-item{
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding:  20rpx 40rpx 20rpx 40rpx;
-  border-bottom: 1px solid #efefef;
- 
-
-}
-.question-text{
-  height: 90rpx;
-  overflow: hidden;
- 
- 
-
-}
-.question-img{
-  margin-left: 20rpx;
-  width: 160rpx;
-  height: 120rpx;
-  flex: 0 0 auto;
-  background-color: cornflowerblue;
-  border-radius: 6rpx;
-}
-
-.question-title{
-
-  display: block;
-  height: 50rpx;
-  line-height: 50rpx;
-  overflow: hidden;
-  font-size: 35rpx;
-}
-
-.question-content{
-  display: block;
-  height: 40rpx;
-  line-height: 40rpx;
-  overflow: hidden;
-  font-size: 30rpx;
-  color: #8f8f94;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
 
 }

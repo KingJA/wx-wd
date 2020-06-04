@@ -1,18 +1,6 @@
 <!--pages/index/index.wxml-->
-<view>
-	<block wx:for="{{questionList}}" wx:for-item="question" wx:key="index">
-		<view class="question-item"  catchtap="onQuestionDetail" data-question-id="{{question.questionId}}">
-			<view class="question-text">
-				<text class="question-title">{{question.title}}</text>
-				<text class="question-content">{{question.content}}</text>
-			</view>
-			<!-- <image class="question-img" src="/images/question/q_1.jpg" /> -->
-			<image class="question-img" src="{{question.resUrl}}" wx:if="{{question.resUrl}}"/>
-		</view>
-	</block>
-</view>
-
+<import src="../../templates/question-list-template/question-list-template.wxml" />
+	<template is="questionListTemplate" data="{{questionList}}" ></template>
 <view class="publish-wrap" bindtap="onPublish">
-	<!-- <image src="/images/icon/ic_publish.png" ></image> -->
 	<text>提问</text>
 </view>
