@@ -1,70 +1,74 @@
 <!--pages/detail/detail.wxml-->
-<view class="question-container">
 
-	<!-- 问题区 内容+评论 -->
-	<view class="content-container">
+<view class="page-root">
+	<!-- <loading wx:if="{{showLoading}}">加载中</loading> -->
+	<view class="question-container">
+
+		<!-- 问题区 内容+评论 -->
+		<view class="content-container">
 
 
-		<!-- 内容-->
-		<view class="question-content">
+			<!-- 内容-->
+			<view class="question-content">
 
-			<view class="user">
-				<image class="user-face" src="{{questionDetail.faceUrl}}" />
-				<text class="user-name">{{questionDetail.username}}</text>
+				<view class="user">
+					<image class="user-face" src="{{questionDetail.faceUrl}}" />
+					<text class="user-name">{{questionDetail.username}}</text>
+				</view>
+
+				<text class="q_title">{{questionDetail.title}}</text>
+				<text class="q_content">{{questionDetail.content}}</text>
+				<image class="q_img" src="{{questionDetail.resUrl}}" wx:if="{{questionDetail.resUrl}}" />
+
 			</view>
 
-			<text class="q_title">{{questionDetail.title}}</text>
-			<text class="q_content">{{questionDetail.content}}</text>
-			<image class="q_img" src="{{questionDetail.resUrl}}" wx:if="{{questionDetail.resUrl}}" />
+			<!-- 评论-->
+			<view class="comment-container">
 
-		</view>
+				<view class="answer-div">回答 3</view>
 
-		<!-- 评论-->
-		<view class="comment-container">
-
-			<view class="answer-div">回答 3</view>
-
-			<block wx:for="{{questionDetail.comments}}" wx:for-item="item" wx:key="index">
-				<view class="question-content">
-					<view class="user">
-						<image class="user-face" src="{{item.faceUrl}}" />
-						<text class="user-name">{{item.username}}</text>
+				<block wx:for="{{questionDetail.comments}}" wx:for-item="item" wx:key="index">
+					<view class="question-content">
+						<view class="user">
+							<image class="user-face" src="{{item.faceUrl}}" />
+							<text class="user-name">{{item.username}}</text>
+						</view>
+						<text class="q_content">{{item.content}}</text>
 					</view>
-					<text class="q_content">{{item.content}}</text>
-				</view>
-			</block>
+				</block>
+
+
+			</view>
 
 
 		</view>
+		<!-- 操作框 -->
+		<view class="bottom-bar">
 
+
+			<!-- 输入框 -->
+			<view class="bar-input">
+				<image class="oper-icon" src="/images/icon/ic_input.png" />
+				<input placeholder="说点什么" placeholder-class="input-placeholder" bindinput="saveContent" />
+
+			</view>
+
+
+			<!-- 操作组 -->
+			<view class="bar-oper">
+				<image class="oper-icon" src="/images/icon/ic_send.png" catchtap="comment" />
+				<i-badge count="3" i-class="badge-count">
+					<image class="oper-icon" src="/images/icon/ic_comment.png" />
+				</i-badge>
+				<image class="oper-icon" src="{{collected?'/images/icon/ic_collect_act.png':'/images/icon/ic_collect_nor.png'}}" catchtap="collect" data-collected="{{collected}}" />
+				<image class="oper-icon" src="/images/icon/ic_share.png" />
+
+
+
+			</view>
+
+
+		</view>
 
 	</view>
-	<!-- 操作框 -->
-	<view class="bottom-bar">
-
-
-		<!-- 输入框 -->
-		<view class="bar-input">
-			<image class="oper-icon" src="/images/icon/ic_input.png" />
-			<input placeholder="说点什么" placeholder-class="input-placeholder" bindinput="saveContent" />
-
-		</view>
-
-
-		<!-- 操作组 -->
-		<view class="bar-oper">
-			<image class="oper-icon" src="/images/icon/ic_send.png" catchtap="comment" />
-			<i-badge count="3" i-class="badge-count">
-				<image class="oper-icon" src="/images/icon/ic_comment.png" />
-			</i-badge>
-			<image class="oper-icon" src="{{collected?'/images/icon/ic_collect_act.png':'/images/icon/ic_collect_nor.png'}}" catchtap="collect" data-collected="{{collected}}" />
-			<image class="oper-icon" src="/images/icon/ic_share.png" />
-
-
-
-		</view>
-
-
-	</view>
-
 </view>

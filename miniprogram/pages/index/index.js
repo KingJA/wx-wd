@@ -75,5 +75,10 @@ Page({
     wx.navigateTo({
       url: "../detail/detail?id=" + questionId
     })
+  },
+  goSearchPage: function (event) {
+    wx.navigateTo({
+      url: "../search/search"
+    })
   }
 })

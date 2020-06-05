@@ -25,6 +25,9 @@ const api = {
   },
   comment: (param) => {
     return http.post('/question/comment', param)
+  },
+  searchQuestions: (param) => {
+    return http.get('/question/search', param)
   }
   
 }

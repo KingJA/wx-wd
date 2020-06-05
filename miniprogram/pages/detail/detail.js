@@ -9,7 +9,8 @@ Page({
     questionDetail: {},
     collected:false,
     questionId:'',
-    content:''
+    content:'',
+    showLoading:true
 
   },
 

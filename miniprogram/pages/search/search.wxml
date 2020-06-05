@@ -1,0 +1,16 @@
+<!--pages/search/search.wxml-->
+<import src="../../templates/question-list-template/question-list-template.wxml" />
+
+<view>
+
+	<!-- 搜索栏 -->
+	<view class="search-container">
+
+			<image  src="/images/icon/ic_search.png"/>
+			<input value="{{keyword}}" placeholder="请输入关键字" confirm-type="search" bindinput="inputKeyword" bindconfirm="search"/>
+			<image  src="/images/icon/ic_close.png" wx:if="{{hasWord}}" catchtap="clearKeyword"/>
+
+	</view>
+<template is="questionListTemplate" data="{{questionList}}"></template>
+
+</view>
