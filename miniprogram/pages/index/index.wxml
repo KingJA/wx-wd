@@ -1,11 +1,17 @@
 <!--pages/index/index.wxml-->
 <import src="../../templates/question-list-template/question-list-template.wxml" />
 <!-- 搜索栏 -->
+
 <view class="search-container" catchtap="goSearchPage">
 	<image src="/images/icon/ic_search.png" />
 	<text>请输入关键字</text>
 </view>
+<!-- 问题列表 -->
+<view class="list-container">
 <template is="questionListTemplate" data="{{questionList}}"/>
+</view>
+
+<!-- 提问图标 -->
 <view class="publish-wrap" bindtap="onPublish">
 	<text>提问</text>
 </view>

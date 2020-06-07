@@ -23,11 +23,11 @@
 			</view>
 
 			<!-- 评论-->
-			<view class="comment-container">
+			<view class="comment-container" wx:if="{{comments.length>0}}">
 
 				<view class="answer-div">回答 3</view>
 
-				<block wx:for="{{questionDetail.comments}}" wx:for-item="item" wx:key="index">
+				<block wx:for="{{comments}}" wx:for-item="item" wx:key="index">
 					<view class="question-content">
 						<view class="user">
 							<image class="user-face" src="{{item.faceUrl}}" />

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/collectedQuestions/collectedQuestions",
     "pages/search/search",
     "pages/user/user", 
     "pages/detail/detail",
@@ -10,9 +11,9 @@
    
   ],
   "window": {
-    "backgroundColor": "#ffffff",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor":"#fff",
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "问答",
     "navigationBarTextStyle": "black"
   },

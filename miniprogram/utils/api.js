@@ -28,7 +28,11 @@ const api = {
   },
   searchQuestions: (param) => {
     return http.get('/question/search', param)
+  },
+  getCollectedQuestions: (param) => {
+    return http.get('/question/collected', param)
   }
+  
   
 }
 export default api;

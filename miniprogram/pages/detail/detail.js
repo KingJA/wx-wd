@@ -7,6 +7,7 @@ Page({
    */
   data: {
     questionDetail: {},
+    comments:[],
     collected:false,
     questionId:'',
     content:'',
@@ -33,6 +34,7 @@ Page({
       console.log(data);
       this.setData({
         questionDetail: data,
+        comments:data.comments,
         collected:data.collected
       });
     });

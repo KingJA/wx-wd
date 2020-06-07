@@ -1,0 +1,2 @@
+/* pages/collectedQuestions/collectedQuestions.wxss */
+@import "../../templates/question-list-template/question-list-template.wxss";

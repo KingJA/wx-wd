@@ -78,4 +78,10 @@ Page({
     this.refreshLoginStatus();
   },
 
+  goCollectedQuestionsPage: function () {
+    wx.navigateTo({
+      url: '../collectedQuestions/collectedQuestions',
+    })
+  },
+
 })
