@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "status-page": "../../components/status-page/status-page"
+  },
   "navigationBarTitleText": "我收藏的问题"
 }

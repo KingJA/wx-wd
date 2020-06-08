@@ -1,3 +1,5 @@
 <!--pages/collectedQuestions/collectedQuestions.wxml-->
 <import src="../../templates/question-list-template/question-list-template.wxml" />
 <template is="questionListTemplate" data="{{questionList}}"/>
+
+<status-page ></status-page >

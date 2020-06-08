@@ -1,0 +1,2 @@
+<!--components/status-page.wxml-->
+<text>{{message}}</text>

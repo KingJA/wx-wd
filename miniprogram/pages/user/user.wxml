@@ -31,7 +31,7 @@
 
   <view class="tab-item" catchtap="goCollectedQuestionsPage">
 		<view>
-			<image src="/images/icon/ic_tab_default.png" class="tab-item-icon" bindtap="changeFace" />
+			<image src="/images/icon/ic_collect_nor.png" class="tab-item-icon" bindtap="changeFace" />
 			<text class="tab-item-text">我收藏的问题</text>
 		</view>
 		<image src="/images/icon/ic_arrow_right.png" class="tab-item-arrow" bindtap="changeFace" />

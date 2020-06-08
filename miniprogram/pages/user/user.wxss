@@ -44,6 +44,10 @@
   height: 30rpx;
 }
 
+.tab-item-text{
+ color: #666;
+}
+
 .btn_quit{
   margin-top: 50rpx;
 }
