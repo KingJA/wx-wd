@@ -15,7 +15,7 @@
 
 	<view class="tab-item">
 		<view>
-			<image src="/images/icon/ic_tab_default.png" class="tab-item-icon" bindtap="changeFace" />
+			<image src="/images/icon/ic_mine_answer.png" class="tab-item-icon" bindtap="changeFace" />
 			<text class="tab-item-text">我发起的问题</text>
 		</view>
 		<image src="/images/icon/ic_arrow_right.png" class="tab-item-arrow" bindtap="changeFace" />
@@ -23,7 +23,7 @@
 
 <view class="tab-item">
 		<view>
-			<image src="/images/icon/ic_tab_default.png" class="tab-item-icon" bindtap="changeFace" />
+			<image src="/images/icon/ic_mine_question.png" class="tab-item-icon" bindtap="changeFace" />
 			<text class="tab-item-text">我回答的问题</text>
 		</view>
 		<image src="/images/icon/ic_arrow_right.png" class="tab-item-arrow" bindtap="changeFace" />
